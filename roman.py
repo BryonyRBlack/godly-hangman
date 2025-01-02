@@ -1,0 +1,2 @@
+#List of Roman Gods taken from: https://greekgodsandgoddesses.net/roman/
+roman_gods = ["Apollo", "Aurora", "Bacchus", "Bellona", "Caelus", "Ceres", "Cupid", "Cybele", "Diana", "Faunus", "Fauna", "Flora", "Fortuna", "Janus", "Juno", "Jupiter", "Mars", "Mercury", "Minerva", "Neptune", "Pluto", "Proserpina", "Pomona", "Saturn", "Spes", "Terra", "Venus", "Veritas", "Vesta", "Vulcan"]
