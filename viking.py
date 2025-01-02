@@ -1,0 +1,3 @@
+#List of Viking Gods taken from:https://en.vikidia.org/wiki/List_of_Norse_gods_and_goddesses
+#Alphabet then amended so no accented letters present
+viking_gods = ["Baldur", "Borr", "Bragi", "Buri", "Dagur", "Delling", "Eir", "Eostre", "Elli", "Forseti", "Freyja", "Freyr", "Frigg", "Fulla", "Gefjun", "Hel", "Heimdallur", "Hermoour", "Hlin", "Hoor", "Hoenir", "Iounn", "Joro", "Kvasir", "Lofn", "Loki", "Magni", "Mani", "Miimir", "Nanna", "Nerthus", "Njorour", "Nott", "Odin", "Saga", "Ran", "Sif", "Sigyn", "Sjofn", "Skaoi", "Snotra", "Sol", "Thor", "Thruer", "Tyr", "Ullr", "Vali", "Var", "Ve", "Vioarr", "Vor", "Yggdrasil"]
