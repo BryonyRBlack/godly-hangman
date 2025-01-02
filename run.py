@@ -61,12 +61,13 @@ def choice():
 def word_to_guess():
     if category == "Greek Gods":
         word = random.choice(greek_gods)
-        return
+        return word.upper()
     elif category == "Roman Gods":
         word = random.choice(roman_gods)
+        return word.upper()
     else:
         word = random.choice(viking_gods)
-    return word.upper
+        return word.upper()
 
 #This function is the basic hangman game
 def hangman_game():
