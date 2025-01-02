@@ -50,7 +50,7 @@ def choice():
         category = "Roman Gods"
         print("You have chosen Roman Gods!\n")
     elif user_choice == 3:
-        category == "Viking Gods"
+        category = "Viking Gods"
         print("You have chosen Viking Gods!\n")
     else:
         print("Invalid choice, please try again")
@@ -119,14 +119,14 @@ def hangman_game():
             print(HANGMAN[lives])
             print("Please only guess a letter")
 
-        #This is the end of the game. If the user has no lives remaining it confirms the word
-        #else it congratulates the user for guessing it correctly
-        if lives == 0:
-            print("You have died. The word was", word)
-        else:
-            print("Congratulations! You guessed the word was", word)
+    #This is the end of the game. If the user has no lives remaining it confirms the word
+    #else it congratulates the user for guessing it correctly
+    if lives == 0:
+        print("You have died. The word was", word)
+    else:
+        print("Congratulations! You guessed the word was", word)
         
-        play_again()
+    play_again()
 
 #This function allows the user to play again
 def play_again():
