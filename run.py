@@ -162,5 +162,5 @@ def run_game():
     hangman_game()
 
 #This runs the game
-if __name__ == "main":
+if __name__ == "__main__":
     hangman_game()
