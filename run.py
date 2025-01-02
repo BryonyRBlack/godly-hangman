@@ -5,6 +5,7 @@
 #Add ons to be imported to ensure the program runs as intended
 import random
 import string
+import os
 
 #Word lists to import
 from greek import greek_gods
