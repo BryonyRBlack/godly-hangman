@@ -133,6 +133,13 @@ def clear():
     else:
         _ = os.system('clear')
 
+start_page()
+
+def run_game():
+    choice()
+    word_to_guess()
+    hangman_game()
+
 #This runs the game
 if __name__ == "main":
     hangman_game()
