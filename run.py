@@ -2,20 +2,20 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
-#Add ons to be imported to ensure the program runs as intended
+# Add ons to be imported to ensure the program runs as intended
 import random
 import string
 import os
 
-#Word lists to import
+# Word lists to import
 from greek import greek_gods
 from roman import roman_gods
 from viking import viking_gods
 
-#The Hangman image to be printed after each guess
+# The Hangman image to be printed after each guess
 from hangman import HANGMAN
 
-#Function user will see on loading game
+# Function user will see on loading game
 def start_page():
     print("Welcome to Godly Hangman\n")
     while True:
@@ -29,7 +29,7 @@ def start_page():
     category = choice()
     return category
 
-#Function to give the user different game categories
+# Function to give the user different game categories
 def choice():
     clear()
     print("Please pick a category using 1, 2 or 3\n")
@@ -58,7 +58,7 @@ def choice():
     
     return category
 
-#This function selects a random word from the list for the user to try and guess
+# This function selects a random word from the list for the user to try and guess
 def word_to_guess():
     if category == "Greek Gods":
         word = random.choice(greek_gods)
@@ -70,27 +70,27 @@ def word_to_guess():
         word = random.choice(viking_gods)
         return word.upper()
 
-#This function is the basic hangman game
+# This function is the basic hangman game
 def hangman_game():
-    #This takes the word from the word_to_guess function, and breaks it down in order for the user to guess
+    # This takes the word from the word_to_guess function, and breaks it down in order for the user to guess
     clear()
     word = word_to_guess()
     letters = set(word)
     alphabet = set(string.ascii_uppercase)
     used_letters = set()
 
-    #This sets the lives at 7 from the start of the game for the game logic to work
+    # This sets the lives at 7 from the start of the game for the game logic to work
     lives = 7
 
-    #This reads the users input of a letter, and displays the current lives, guessed letters
-    #and "-" for letters not yet guessed
+    # This reads the users input of a letter, and displays the current lives, guessed letters
+    # and "-" for letters not yet guessed
     while len(letters) > 0 and lives > 0:
         print("You have", lives, "lives remaining. You have guessed:", "".join(used_letters))
         word_list = [letter if letter in used_letters else "-" for letter in word]
         print("".join(word_list))
         guessed_letter = input("Guess a letter: ").upper()
         
-        #This displays if the user has guessed the correct letter
+        # This displays if the user has guessed the correct letter
         if guessed_letter in alphabet - used_letters:
             clear()
             print(HANGMAN[lives])
@@ -101,27 +101,27 @@ def hangman_game():
                 letters.remove(guessed_letter)
                 print("")
             
-            #This runs if the guessed letter is not in the word. It also removes a life
+            # This runs if the guessed letter is not in the word. It also removes a life
             else:
                 clear()
                 lives = lives - 1
                 print(HANGMAN[lives])
                 print(f"{guessed_letter} is not in this word\n")
 
-        #This runs if the user has guessed a letter they have previously guessed    
+        # This runs if the user has guessed a letter they have previously guessed    
         elif guessed_letter in used_letters:
             clear()
             print(HANGMAN[lives])
             print("You have already guessed this letter. Please try again\n")
 
-        #This only runs if the user attempts to input something that is not a letter
+        # This only runs if the user attempts to input something that is not a letter
         else:
             clear()
             print(HANGMAN[lives])
             print("Please only guess a letter\n")
 
-    #This is the end of the game. If the user has no lives remaining it confirms the word
-    #else it congratulates the user for guessing it correctly
+    # This is the end of the game. If the user has no lives remaining it confirms the word
+    # else it congratulates the user for guessing it correctly
     if lives == 0:
         print(f"You have died. The word was {word}\n")
     else:
@@ -129,7 +129,7 @@ def hangman_game():
         
     play_again()
 
-#This function allows the user to play again
+# This function allows the user to play again
 def play_again():
     while True:
         try:
@@ -145,8 +145,8 @@ def play_again():
             print("Please enter yes or no")
 
 
-#Code taken from https://www.geeksforgeeks.org/clear-screen-python/
-#This keeps the console clear, as it removes previous inputs
+# Code taken from https://www.geeksforgeeks.org/clear-screen-python/
+# This keeps the console clear, as it removes previous inputs
 def clear():
         # For Windows
     if os.name == 'nt':
@@ -162,6 +162,6 @@ def run_game():
     word_to_guess()
     hangman_game()
 
-#This runs the game
+# This runs the game
 if __name__ == "__main__":
     hangman_game()
