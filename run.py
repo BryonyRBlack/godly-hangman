@@ -25,9 +25,9 @@ def start_page():
         else:
             print(f"Welcome to Hangman {name}!\n")
             break
-        global category
-        category = choice()
-        return category
+    global category
+    category = choice()
+    return category
 
 #Function to give the user different game categories
 def choice():
@@ -38,7 +38,7 @@ def choice():
         except ValueError:
                 print("Please pick either 1, 2 or 3")
                 continue
-        if user_choice < 0 or user_chouce > 3:
+        if user_choice < 0 or user_choice > 3:
                 print("Only 1, 2 or 3 are valid options")
                 continue
         else:
@@ -54,6 +54,7 @@ def choice():
             print("You have chosen Viking Gods!\n")
     else:
             print("Invalid choice, please try again")
+    
     return category
 
 #This function selects a random word from the list for the user to try and guess
@@ -122,6 +123,24 @@ def hangman_game():
             print("You have died. The word was", word)
         else:
             print("Congratulations! You guessed the word was", word)
+        
+        play_again()
+
+#This function allows the user to play again
+def play_again():
+    while True:
+        try:
+            print("Would you like to play again?\n")
+            run_again = input("Yes or no?: ").lower()
+            if run_again == "yes":
+                run_game()
+                break
+            elif run_again == "no":
+                print("Thank you for playing!")
+                break
+        except ValueError:
+            print("Please enter yes or no")
+
 
 #Code taken from https://www.geeksforgeeks.org/clear-screen-python/
 #This keeps the console clear, as it removes previous inputs
