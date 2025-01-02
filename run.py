@@ -24,26 +24,26 @@ def choice():
     while True:
         try:
             user_choice = int(input("1. Greek Gods, 2. Roman Gods or 3. Viking Gods"))
-            except ValueError:
+        except ValueError:
                 print("Please pick either 1, 2 or 3")
                 continue
-            if user_choice < 0 or user_chouce > 3:
+        if user_choice < 0 or user_chouce > 3:
                 print("Only 1, 2 or 3 are valid options")
                 continue
-            else:
+        else:
                 break
-        if user_choice == 1:
+    if user_choice == 1:
             category = "Greek Gods"
             print("You have chosen Greek Gods!\n")
-        elif user_choice == 2:
+    elif user_choice == 2:
             category = "Roman Gods"
             print("You have chosen Roman Gods!\n")
-        elif user_choice == 3:
+    elif user_choice == 3:
             category == "Viking Gods"
             print("You have chosen Viking Gods!\n")
-        else:
+    else:
             print("Invalid choice, please try again")
-        return category
+    return category
 
 #This function selects a random word from the list for the user to try and guess
 def word_to_guess():
