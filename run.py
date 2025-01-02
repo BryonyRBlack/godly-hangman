@@ -85,3 +85,7 @@ def clear():
     # For macOS and Linux
     else:
         _ = os.system('clear')
+
+#This runs the game
+if __name__ =="main":
+    hangman_game()
