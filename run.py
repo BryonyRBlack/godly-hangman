@@ -18,3 +18,55 @@ from hangman import HANGMAN
 def word_to_guess():
     word = random.choice(greek_gods)
     return word.upper
+
+#This function is the basic hangman game
+def hangman_game():
+    #This takes the word from the word_to_guess function, and breaks it down in order for the user to guess
+    word = word_to_guess()
+    letters = set(word)
+    alphabet = set(string.ascii_uppercase)
+    used_letters = set()
+
+    #This sets the lives at 7 from the start of the game for the game logic to work
+    lives = 7
+
+    #This reads the users input of a letter, and displays the current lives, guessed letters
+    #and "-" for letters not yet guessed
+    while len(letters) > 0 and lives > 0:
+        print("You have", lives, "remaining. You have guessed:", "".join(used_letters))
+        word_list = [letter if letter in used_letters else "-" for letter in word]
+        print("".join(word_list))
+        guessed_letter = input("Guess a letter: ").upper()
+        
+        #This displays if the user has guessed the correct letter
+        if guessed_letter in alphabet - used_letters:
+            print(HANGMAN[lives])
+            print(guessed_letter, "is in the word")
+            used_letters.add(guessed_letter)
+            
+            if guessed_letter in letters:
+                letters.remove(guessed_letter)
+                print("")
+            
+            #This runs if the guessed letter is not in the word. It also removes a life
+            else:
+                lives = lives - 1
+                print(HANGMAN[lives])
+                print(guessed_letter, "is not in this word")
+
+        #This runs if the user has guessed a letter they have previously guessed    
+        elif guessed_letter in used_letters:
+            print(HANGMAN[lives])
+            print("You have already guessed this letter. Please try again")
+
+        #This only runs if the user attempts to input something that is not a letter
+        else:
+            print(HANGMAN[lives])
+            print("Please only guess a letter")
+
+        #This is the end of the game. If the user has no lives remaining it confirms the word
+        #else it congratulates the user for guessing it correctly
+        if lives == 0:
+            print("You have died. The word was", word)
+        else:
+            print("Congratulations! You guessed the word was", word)
