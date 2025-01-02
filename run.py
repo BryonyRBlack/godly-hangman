@@ -15,8 +15,19 @@ from viking import viking_gods
 #The Hangman image to be printed after each guess
 from hangman import HANGMAN
 
-#Global function to ensure data is read in all functions
-category = choice()
+#Function user will see on loading game
+def start_page():
+    print("Welcome to Godly Hangman\n")
+    while True:
+        name = input("Please enter your name: \n")
+        if not name.isalpha():
+            print("Please only enter letters")
+        else:
+            print(f"Welcome to Hangman {name}!\n")
+            break
+        global category
+        category = choice()
+        return category
 
 #Function to give the user different game categories
 def choice():
