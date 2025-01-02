@@ -22,6 +22,7 @@ def word_to_guess():
 #This function is the basic hangman game
 def hangman_game():
     #This takes the word from the word_to_guess function, and breaks it down in order for the user to guess
+    clear()
     word = word_to_guess()
     letters = set(word)
     alphabet = set(string.ascii_uppercase)
@@ -40,6 +41,7 @@ def hangman_game():
         
         #This displays if the user has guessed the correct letter
         if guessed_letter in alphabet - used_letters:
+            clear()
             print(HANGMAN[lives])
             print(guessed_letter, "is in the word")
             used_letters.add(guessed_letter)
@@ -50,17 +52,20 @@ def hangman_game():
             
             #This runs if the guessed letter is not in the word. It also removes a life
             else:
+                clear()
                 lives = lives - 1
                 print(HANGMAN[lives])
                 print(guessed_letter, "is not in this word")
 
         #This runs if the user has guessed a letter they have previously guessed    
         elif guessed_letter in used_letters:
+            clear()
             print(HANGMAN[lives])
             print("You have already guessed this letter. Please try again")
 
         #This only runs if the user attempts to input something that is not a letter
         else:
+            clear()
             print(HANGMAN[lives])
             print("Please only guess a letter")
 
@@ -70,3 +75,13 @@ def hangman_game():
             print("You have died. The word was", word)
         else:
             print("Congratulations! You guessed the word was", word)
+
+#Code taken from https://www.geeksforgeeks.org/clear-screen-python/
+#This keeps the console clear, as it removes previous inputs
+def clear():
+        # For Windows
+    if os.name == 'nt':
+        _ = os.system('cls')
+    # For macOS and Linux
+    else:
+        _ = os.system('clear')
