@@ -46,7 +46,12 @@ def choice():
 
 #This function selects a random word from the list for the user to try and guess
 def word_to_guess():
-    word = random.choice(greek_gods)
+    if category == "Greek Gods":
+        word = random.choice(greek_gods)
+    elif category == "Roman Gods":
+        word = random.choice(roman_gods)
+    else:
+        word = random.choice(viking_gods)
     return word.upper
 
 #This function is the basic hangman game
