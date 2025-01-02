@@ -125,7 +125,7 @@ def hangman_game():
     if lives == 0:
         print(f"You have died. The word was {word}\n")
     else:
-        print("Congratulations! You guessed the word was {word}\n")
+        print(f"Congratulations! You guessed the word was {word}\n")
         
     play_again()
 
