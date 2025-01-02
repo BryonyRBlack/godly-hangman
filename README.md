@@ -1,32 +1,17 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Godly Hangman
+![Image of app on multiple devices](assets/images/readme%20opening%20image.png)
+Live site [here](https://godly-hangman-9146412cab40.herokuapp.com/)
 
-Welcome,
+## Goals
+### Site Owner
+As the owner of the site, I wanted a way to demonstrate my Python skills, and Hangman seemed the best way to do so. I used mythology for categories to have three similar ones. These names also avoided dashes, or spaces in the middle, whilst a category such as countries would not do this. 
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **May 14, 2024**
+### User Goals
+For a first time user, I wanted a simple way to play Hangman. I wanted it to be clear how to play, as well as give options for which list of Gods to be selected. For a returning user, I wanted them not to have to read the instructions again.
 
-## Reminders
+## Planning
+![Image showing the flowchart](assets/images/flowchart.png)
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+In order to buld my game, I first mapped out what I wanted it to look like. First I wanted a way for the user to input their name, and to do so without being able to input letters.
 
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
----
-
-Happy coding!
+After this, I wanted them to have the option to pick which category they wished to use, Greek, Roman or Viking. This is because these are the best known mytholgies. The game would then play as normal Hangman, with part of the gallows being added to the drawing if the answer was incorrect. At the end, the user has the option to play again, and can change which category they are answering.
