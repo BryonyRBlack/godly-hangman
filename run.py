@@ -49,6 +49,7 @@ def start_page():
 
 # Function to bring up instructions if user requests this
 def instructions():
+    clear()
     print("Instructions\n")
     print("A random God's name will be selected from your chosen category\n")
     print("The number of letters in the name will be shown in '-'\n")
