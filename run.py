@@ -201,7 +201,3 @@ def clear():
         _ = os.system('clear')
 
 start_page()
-
-# This runs the game
-if __name__ == "__main__":
-    hangman_game()
