@@ -46,8 +46,13 @@ def start_page():
 # Function to bring up instructions if user requests this
 def instructions():
     clear()
-    print("Instructions\n")
-    print("A random God's name will be selected from your chosen category\n")
+    print(r""" _____           _                   _   _                 
+|_   _|         | |                 | | (_)                
+  | |  _ __  ___| |_ _ __ _   _  ___| |_ _  ___  _ __  ___ 
+  | | | '_ \/ __| __| '__| | | |/ __| __| |/ _ \| '_ \/ __|
+ _| |_| | | \__ \ |_| |  | |_| | (__| |_| | (_) | | | \__ \
+|_____|_| |_|___/\__|_|   \__,_|\___|\__|_|\___/|_| |_|___/""")
+    print("\n A random God's name will be selected from your chosen category\n")
     print("The number of letters in the name will be shown in '-'\n")
     print("Guess the letters within the word\n")
     print("If you guess the wrong letter, part of the gallows will be drawn\n")
