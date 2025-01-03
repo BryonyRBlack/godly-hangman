@@ -33,6 +33,33 @@ def start_page():
             print(f"Welcome to Hangman {name}!\n")
             break
 
+# Function to bring up instructions if user requests this
+def instructions():
+    print("Instructions\n")
+    print("A random God's name will be selected from your chosen category\n")
+    print("The number of letters in the name will be shown in '-'\n")
+    print("Guess the letters within the word\n")
+    print("If you guess the wrong letter, part of the gallows will be drawn\n")
+    print("The game will end if you correctly guess the name, or the man is hung\n")
+    while True:
+        try:
+            play = input("Enter yes if you're ready to play: \n").lower()
+        except ValueError:
+            print("Please enter yes to play: \n")
+            continue
+        if play == "yes":
+            run_game()
+            break
+        elif not play.isalpha():
+            print("Please only enter yes to play: \n")
+            continue
+        elif play != "yes":
+            print("Please enter yes to proceed: \n")
+            continue
+        else:
+            continue
+
+
 # Function to give the user different game categories
 def choice():
     clear()
