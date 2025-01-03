@@ -15,6 +15,13 @@ from viking import viking_gods
 # The Hangman image to be printed after each guess
 from hangman import HANGMAN
 
+# Function to call game functions to run
+def run_game():
+    global category
+    category = choice()
+    word_to_guess()
+    hangman_game()
+
 # Function user will see on loading game
 def start_page():
     print("Welcome to Godly Hangman\n")
@@ -25,9 +32,6 @@ def start_page():
         else:
             print(f"Welcome to Hangman {name}!\n")
             break
-    global category
-    category = choice()
-    return category
 
 # Function to give the user different game categories
 def choice():
@@ -156,11 +160,6 @@ def clear():
         _ = os.system('clear')
 
 start_page()
-
-def run_game():
-    choice()
-    word_to_guess()
-    hangman_game()
 
 # This runs the game
 if __name__ == "__main__":
