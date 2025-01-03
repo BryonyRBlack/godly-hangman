@@ -32,6 +32,20 @@ def start_page():
         else:
             print(f"Welcome to Hangman {name}!\n")
             break
+    while True:
+        try:
+            mode = int(input("Press 1 for instructions, or 2 to start the game: \n"))
+        except ValueError:
+            print("Please enter 1 or 2: \n")
+            continue
+        if mode == 1:
+            instructions()
+            break
+        elif mode == 2:
+            run_game()
+        else:
+            print("Error")
+            continue
 
 # Function to bring up instructions if user requests this
 def instructions():
