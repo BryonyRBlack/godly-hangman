@@ -29,7 +29,7 @@ def start_page():
                        __/ |                      __/ |                      
                       |___/                      |___/                       """)
     while True:
-        name = input("Please enter your name: \n")
+        name = input("\nPlease enter your name: \n")
         if not name.isalpha():
             print("Please only enter letters\n")
         else:
