@@ -20,7 +20,14 @@ def run_game():
 
 # Function user will see on loading game
 def start_page():
-    print("Welcome to Godly Hangman\n")
+    print(r"""  _____           _ _         _    _                                         
+ / ____|         | | |       | |  | |                                        
+| |  __  ___   __| | |_   _  | |__| | __ _ _ __   __ _ _ __ ___   __ _ _ __  
+| | |_ |/ _ \ / _` | | | | | |  __  |/ _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+| |__| | (_) | (_| | | |_| | | |  | | (_| | | | | (_| | | | | | | (_| | | | |
+ \_____|\___/ \__,_|_|\__, | |_|  |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+                       __/ |                      __/ |                      
+                      |___/                      |___/                       """)
     while True:
         name = input("Please enter your name: \n")
         if not name.isalpha():
