@@ -46,6 +46,7 @@ def start_page():
             break
         elif mode == 2:
             run_game()
+            break
         else:
             print("Error")
             continue
